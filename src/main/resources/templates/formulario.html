@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Formulario de Producto</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #edf5f8;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #03A9F4;
+            color: #fff;
+            padding: 1em;
+            text-align: center;
+        }
+
+        .btn-back {
+            background-color: #03A9F4;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            margin: 20px 0;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-back:hover {
+            background-color: #555;
+        }
+
+        section {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 1em;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Formulario de Producto</h1>
+</header>
+
+<div class="container mt-3">
+    <a href="/tabla" class="btn-back">Volver a la Lista de Productos</a>
+    <section>
+        <h2>Nuevo Producto</h2>
+
+        <form th:action="@{/tabla/form}" method="post" th:object="${producto}">
+            <!-- ID -->
+            <div class="mb-3 mt-3">
+                <label>ID:</label>
+                <input type="number" class="form-control" placeholder="ID" th:field="*{id_p}" readonly="readonly">
+            </div>
+
+            <!-- Nombre -->
+            <div class="mb-3">
+                <label>Nombre:</label>
+                <input type="text" class="form-control" placeholder="Ingrese el nombre" th:field="*{nombre}">
+            </div>
+
+            <!-- Precio -->
+            <div class="mb-3">
+                <label>Precio:</label>
+                <input type="number" step="0.01" class="form-control" placeholder="Ingrese el precio" th:field="*{precio}">
+            </div>
+
+            <!-- Stock -->
+            <div class="mb-3">
+                <label>Stock:</label>
+                <input type="number" class="form-control" placeholder="Ingrese la cantidad en stock" th:field="*{stock}">
+            </div>
+
+            <button type="submit" class="btn btn-primary">Guardar</button>
+        </form>
+    </section>
+</div>
+
+</body>
+</html>
