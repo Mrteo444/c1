@@ -5,10 +5,14 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 @Entity
+@NoArgsConstructor
+@AllArgsConstructor
 public class Productos {
 
     @Id
@@ -16,5 +20,5 @@ public class Productos {
     private int id_p;
     private String nombre;
     private double precio ;
-    private int stock;
+    private int ingredientes;
 }

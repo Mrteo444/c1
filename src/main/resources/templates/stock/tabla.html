@@ -1,0 +1,16 @@
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Producto</th>
+        <th>Cantidad</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="stock : ${stockList}">
+        <td th:text="${stock.id_s}">ID</td>
+        <td th:text="${stock.productos != null ? stock.productos.nombre : 'No disponible'}"></td>
+        <td th:text="${stock.cantidad}">Cantidad</td>
+    </tr>
+    </tbody>
+</table>
