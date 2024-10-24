@@ -18,7 +18,7 @@ public class Stock {
 
     private int cantidad;
 
-    private int total; // Agregar esta línea
+    private int total; 
 
     @ManyToOne
     @JoinColumn(name = "id_p")

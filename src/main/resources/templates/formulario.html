@@ -17,25 +17,25 @@
         <h2>Nuevo Pizza</h2>
 
         <form th:action="@{/tabla/form}" method="post" th:object="${producto}">
-            <!-- ID -->
+       
             <div>
                 <label>ID:</label>
                 <input type="number" placeholder="ID" th:field="*{id_p}" readonly="readonly">
             </div>
 
-            <!-- Nombre -->
+          
             <div>
                 <label>Nombre:</label>
                 <input type="text" placeholder="Ingrese el nombre" th:field="*{nombre}">
             </div>
 
-            <!-- Precio -->
+       
             <div>
                 <label>Precio:</label>
                 <input type="number" step="0.01" placeholder="Ingrese el precio" th:field="*{precio}">
             </div>
 
-            <!-- Ingredientes -->
+          
             <div>
                 <label>Ingredientes:</label>
                 <input type="number" placeholder="Ingrese la cantidad de ingrediente" th:field="*{ingredientes}">

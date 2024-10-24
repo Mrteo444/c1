@@ -3,7 +3,7 @@
     <input type="number" th:field="*{total}" required/>
 
     <label for="producto">Producto:</label>
-    <select name="productoId"> <!-- Cambia aquí -->
+    <select name="productoId">
         <option th:each="producto : ${productosList}"
                 th:value="${producto.id_p}"
                 th:text="${producto.nombre}">Producto</option>
